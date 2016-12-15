@@ -63,7 +63,16 @@ class User(models.Model):
 	userMgr = UserManager()
 
 
-# class BookManager(models.Manager):
+class BookManager(models.Manager):
+	def createbook(self, book_title, author, review, rating ):
+		errors = []
+		if (len(book_title) == 0) or (len(author) == 0)  or (len(review) == 0):
+			errors.append("Cannot be blank")
+			return (False, errors)
+		else:
+			new_book = Book.objects.create(book_title = book_title, author = author, review = review, rating = rating)
+			return (True, new_book)
+
 
 
 class Book(models.Model):
@@ -74,7 +83,7 @@ class Book(models.Model):
 	created_at = models.DateTimeField(auto_now_add = True)
 	updated_at = models.DateTimeField(auto_now = True)
 	# user = models.ForeignKey(User)
-	# objects = BookManager()
+	objects = BookManager()
 
 # class ReviewManager(models.Manager):
 

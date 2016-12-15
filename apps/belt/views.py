@@ -57,12 +57,14 @@ def add_book(request):
 	return render(request, "belt/add_book.html")
 
 def add_book_process(request):
-	print "Add Book Route has been hit", "*"*500 # Delete this once we deploy!
-	new_book = Book.objects.create(book_title = request.POST['book_title'], author = request.POST['author'], review = request.POST['review'], rating = request.POST['rating'], )
-	print new_book, "Book has been created", "#"*500 # Delete this once we deploy!
-
-
-	return redirect('/books')
+	if request.method == "POST":
+		print "Add Book Route has been hit", "*"*500 # Delete this once we deploy!
+		result = Book.objects.createbook(book_title = request.POST['book_title'], author = request.POST['author'], review = request.POST['review'], rating = request.POST['rating'], )
+		print result, "Book has been created", "#"*500 # Delete this once we deploy!
+	if result[0] == True:
+		return redirect('/books')
+	else:
+		return redirect('/add')
 
 
 def add_review(request):

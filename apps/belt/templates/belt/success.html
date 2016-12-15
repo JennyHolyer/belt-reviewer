@@ -12,17 +12,20 @@
         <div class="register">
           <h2>Recent Book Reviews:</h2>
           {% for book in all_books %}
-            <p><a href=""><strong>{{ book.book_title }} </strong> Written by {{ book.author }} </a></p>
-            <p> <strong>{{ request.session.first_name }} says: </strong>{{ book.review }} </p>
+            <p><a href=""><strong>{{ book.book_title }} </strong> <br>Written by {{ book.author }} </a></p>
+            <p>
+              <strong>{{ request.session.first_name }} says: </strong><br>
+              {{ book.review }}
+            </p>
             <p> Rating: {{ book.rating }} Posted on: {{ book.created_at }}</p>
-            <hr>
+            <hr><br>
           {%  endfor %}
         </div>
 
         <div class="login">
-          <p>Success! Welcome, {{ request.session.first_name }}!</p>
+          <p>Welcome, {{ request.session.first_name }}! <a href="/books">Home</a> | <a href="">Logout</a></p>
 
-          <a href="/add">Add Book and Review</a> | <a href="">Logout</a><br>
+          <a href="/add">Add Book and Review</a><br>
           <h2>Other Books with Reviews</h2>
           {% for book in all_books %}
             <p>{{ book.book_title }} </p>
