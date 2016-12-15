@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!Doctype html>
+<html>
+    <head>
+       <title>Books</title>
+       <link rel="stylesheet" href="{% static 'belt/css/styles.css' %}">
+       <script src="https://use.typekit.net/iii7xtz.js"></script>
+       <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    </head>
+    <body>
+      <div id="wrapper">
+        <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
+
+        <a href="">Add Book and Review</a> | <a href="">Logout</a>
+
+        <div class="register">
+          <h2>User Alias: Margieeee</h2>
+          <p>Name: Marjan The Great</p>
+          <p>Email: realslimshady@gmail.com</p>
+          <p>Total Reviews: 2,040</p>
+          <p>Rating 4.5</p>
+          <p><span><a href="">Marjan</a> </span>says: You will love it with lots of self-respect crying in my bathtub lol. It's very hard to meet quality women giving massages staying up late for real though it's very hard to meet </p>
+          <p>Posted on November 25, 2016</p>
+        </div>
+
+        <div class="login">
+          <h2>Posted Reviews on the follwing Books</h2>
+            <ul>
+              <li><a href="">Book 1</a></li>
+              <li><a href="">Book 2</a></li>
+              <li><a href="">Book 3</a></li>
+              <li><a href="">Book 4</a></li>
+            </ul>
+        </div>
+
+
+
+
+      </div>
+    </body>
+</html>

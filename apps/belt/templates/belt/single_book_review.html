@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!Doctype html>
+<html>
+    <head>
+       <title>Books</title>
+       <link rel="stylesheet" href="{% static 'belt/css/styles.css' %}">
+       <script src="https://use.typekit.net/iii7xtz.js"></script>
+       <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    </head>
+    <body>
+      <div id="wrapper">
+        <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
+        <div class="register">
+          <h3>Book Title Goes Here</h3>
+          <h5>Author: Poor Marjan</h5>
+          <h4>Reviews:</h4>
+          <hr><br>
+          <p>Rating: 1</p>
+          <p><strong><a href="">Hemant</a></strong> says: My daughter loves reading this I don't know why!</p>
+          <p>Posted on December 20 2016</p>
+
+          <hr><br>
+          <p>Rating: 1</p>
+          <p><strong><a href="">Hemant</a></strong> says: My daughter loves reading this I don't know why!</p>
+          <p>Posted on December 20 2016</p>
+
+          <hr><br>
+          <p>Rating: 1</p>
+          <p><strong><a href="">Hemant</a></strong> says: My daughter loves reading this I don't know why!</p>
+          <p>Posted on December 20 2016</p>
+        </div>
+        <div class="login">
+          <form class="" action="/" method="post">
+            <textarea name="name" rows="8" cols="80" placeholder="Add your review here"></textarea>
+            Add Rating:
+            <select class="" name="Rating" value="Rating">
+              <option value="5">5</option>
+              <option value="5">4</option>
+              <option value="5">3</option>
+              <option value="5">2</option>
+              <option value="5">1</option>
+            </select>
+            <input type="submit" name="" value="Submit Review">
+          </form>
+        </div>
+      </div>
+    </body>
+</html>
