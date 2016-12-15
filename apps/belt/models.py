@@ -86,8 +86,17 @@ class Book(models.Model):
 	objects = BookManager()
 
 # class ReviewManager(models.Manager):
+# 	def createreview(self, review, rating):
+# 		errors = []
+# 		if (len(book_title) == 0) or (len(author) == 0)  or (len(review) == 0):
+# 			errors.append("Cannot be blank")
+# 			return (False, errors)
+# 		else:
+# 			new_book = Book.objects.create(book_title = book_title, author = author)
+# 			new_review = Review.objects.create(review = review, rating = rating, book = new_book)
+# 			return (True, new_book)
 
-
+#
 # class Review(models.Model):
 # 	book = models.ForeignKey(Book)
 # 	user = models.ForeignKey(User)
