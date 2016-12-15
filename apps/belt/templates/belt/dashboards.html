@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!Doctype html>
+<html>
+    <head>
+       <title>Books</title>
+       <link rel="stylesheet" href="{% static 'belt/css/styles.css' %}">
+       <script src="https://use.typekit.net/iii7xtz.js"></script>
+       <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    </head>
+    <body>
+      <div id="wrapper">
+        <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
+
+        <a href="">Add Book and Review</a> | <a href="">Logout</a>
+
+        <div class="registration">
+          <h2>Recent Book Reviews:</h2>
+          <h3><a href="">The Greatest Salesman in the world</a></h3>
+          <p>Rating 4.5</p>
+          <p><span><a href="">Marjan</a> </span>says: You will love it with lots of self-respect crying in my bathtub lol. It's very hard to meet quality women giving massages staying up late for real though it's very hard to meet </p>
+          <p>Posted on November 25, 2016</p>
+        </div>
+
+        <div class="login">
+          <h2>Other Books with Reviews</h2>
+            <ul>
+              <li>Book 1</li>
+              <li>Book 2</li>
+              <li>Book 3</li>
+              <li>Book 4</li>
+            </ul>
+        </div>
+
+
+
+
+      </div>
+    </body>
+</html>
