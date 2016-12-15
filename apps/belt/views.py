@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
-from . import models
-from .models import User
+# from . import models
+from .models import User, Book
 
 def index(request):
 	if not 'first_name' in request.session:
@@ -45,13 +45,24 @@ def login_process(request):
 		return redirect('/')
 
 def books(request):
-	return render(request, "belt/success.html")
+	print "Book query has been hit", "+"*500 # Delete this once we deploy!
+	all_books = Book.objects.all().order_by('-created_at')
+	context = {
+		'all_books': all_books
+	}
+	print all_books, "Book has been fetched", "&"*500 # Delete this once we deploy!
+	return render(request, "belt/success.html", context)
 
 def add_book(request):
 	return render(request, "belt/add_book.html")
 
 def add_book_process(request):
-	return redirect('books/id')
+	print "Add Book Route has been hit", "*"*500 # Delete this once we deploy!
+	new_book = Book.objects.create(book_title = request.POST['book_title'], author = request.POST['author'], review = request.POST['review'], rating = request.POST['rating'], )
+	print new_book, "Book has been created", "#"*500 # Delete this once we deploy!
+
+
+	return redirect('/books')
 
 
 def add_review(request):
@@ -67,4 +78,5 @@ def dashboard(request):
 	return render(request, "belt/dashboard.html")
 
 def logout(request):
+
 	return redirect('/')

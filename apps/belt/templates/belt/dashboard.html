@@ -9,10 +9,6 @@
     </head>
     <body>
       <div id="wrapper">
-        <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
-
-        <a href="">Add Book and Review</a> | <a href="">Logout</a>
-
         <div class="register">
           <h2>User Alias: Margieeee</h2>
           <p>Name: Marjan The Great</p>
@@ -24,6 +20,8 @@
         </div>
 
         <div class="login">
+          <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
+          <a href="">Add Book and Review</a> | <a href="">Logout</a>
           <h2>Posted Reviews on the follwing Books</h2>
             <ul>
               <li><a href="">Book 1</a></li>

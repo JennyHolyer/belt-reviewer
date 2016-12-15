@@ -11,17 +11,18 @@
       <div id="wrapper">
         <h1>Add Book, {{ request.session.first_name }}!</h1>
         <h2>Add a New Book Title and a Review:</h2>
-        <form class="" action="/add" method="post">
+        <form class="" action="/bookprocess" method="post">
+          {% csrf_token %}
           <input type="text" name="book_title" value="" placeholder="Book Title">
           <input type="text" name="author" value="" placeholder="Author's Name">
-          <textarea name="name" rows="8" cols="80" placeholder="Add your review here"></textarea>
-          Add Rating: 
-          <select class="" name="Rating">
+          <textarea name="review" rows="8" cols="80" placeholder="Add your review here"></textarea>
+          Add Rating:
+          <select class="" name="rating">
             <option value="5">5</option>
-            <option value="5">4</option>
-            <option value="5">3</option>
-            <option value="5">2</option>
-            <option value="5">1</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
           </select>
           <input type="submit" name="" value="Add Book and Review">
         </form>

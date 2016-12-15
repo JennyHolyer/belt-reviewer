@@ -2,7 +2,7 @@ body {
   font-family: "futura-pt",sans-serif;
 }
 #wrapper {
-  width: 1080px;
+  width: 1045px;
   background: #f8f8f8;
   padding:20px 0 200px 40px;
   margin: 0 auto;
@@ -10,8 +10,8 @@ body {
 }
 
 .register {
-  width: 400px;
-  margin-right: 100px;
+  width: 600px;
+  margin-right: 40px;
   display: inline-block;
   vertical-align: top;
 }

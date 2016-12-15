@@ -9,7 +9,6 @@
     </head>
     <body>
       <div id="wrapper">
-        <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
         <div class="register">
           <h3>Book Title Goes Here</h3>
           <h5>Author: Poor Marjan</h5>
@@ -30,6 +29,7 @@
           <p>Posted on December 20 2016</p>
         </div>
         <div class="login">
+          <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
           <form class="" action="/" method="post">
             <textarea name="name" rows="8" cols="80" placeholder="Add your review here"></textarea>
             Add Rating:

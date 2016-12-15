@@ -9,26 +9,24 @@
     </head>
     <body>
       <div id="wrapper">
-        <h1>Success! Welcome, {{ request.session.first_name }}!</h1>
-
-        <a href="">Add Book and Review</a> | <a href="">Logout</a>
-
         <div class="register">
           <h2>Recent Book Reviews:</h2>
-          <h3><a href="">The Greatest Salesman in the world</a></h3>
-          <p>Rating 4.5</p>
-          <p><span><a href="">Marjan</a> </span>says: You will love it with lots of self-respect crying in my bathtub lol. It's very hard to meet quality women giving massages staying up late for real though it's very hard to meet </p>
-          <p>Posted on November 25, 2016</p>
+          {% for book in all_books %}
+            <p><a href=""><strong>{{ book.book_title }} </strong> Written by {{ book.author }} </a></p>
+            <p> <strong>{{ request.session.first_name }} says: </strong>{{ book.review }} </p>
+            <p> Rating: {{ book.rating }} Posted on: {{ book.created_at }}</p>
+            <hr>
+          {%  endfor %}
         </div>
 
         <div class="login">
+          <p>Success! Welcome, {{ request.session.first_name }}!</p>
+
+          <a href="/add">Add Book and Review</a> | <a href="">Logout</a><br>
           <h2>Other Books with Reviews</h2>
-            <ul>
-              <li>Book 1</li>
-              <li>Book 2</li>
-              <li>Book 3</li>
-              <li>Book 4</li>
-            </ul>
+          {% for book in all_books %}
+            <p>{{ book.book_title }} </p>
+          {%  endfor %}
         </div>
 
 

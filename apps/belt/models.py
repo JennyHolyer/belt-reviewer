@@ -19,7 +19,7 @@ class UserManager(models.Manager):
 
 		elif (not (password == confirm_password)):
 			errors.append("Password don't match")
-	
+
 
 		if len(errors) is not 0:
 			return (False, errors)
@@ -67,26 +67,21 @@ class User(models.Model):
 
 
 class Book(models.Model):
-	book_title = models.CharField(max_length=255, blank=True, null=True)
-	author = models.CharField(max_length=45, blank=True, null=True)
+	book_title = models.CharField(max_length=255, null=True)
+	author = models.CharField(max_length=45, null=True)
+	review = models.TextField(max_length=1000, null=True)
+	rating = models.TextField(max_length=5, null=True)
 	created_at = models.DateTimeField(auto_now_add = True)
 	updated_at = models.DateTimeField(auto_now = True)
-	user = models.ForeignKey(User)
-	# bookMgr = BookManager()
+	# user = models.ForeignKey(User)
+	# objects = BookManager()
 
 # class ReviewManager(models.Manager):
 
 
-class Review(models.Model):
-	book = models.ForeignKey(Book) 
-	user = models.ForeignKey(User)
-	review = models.TextField(max_length=1000, blank=True, null=True)
-	created_at = models.DateTimeField(auto_now_add = True)
-	updated_at = models.DateTimeField(auto_now = True)
-	# reviewMgr = ReviewManager()
-
-
-
-
-
-	
+# class Review(models.Model):
+# 	book = models.ForeignKey(Book)
+# 	user = models.ForeignKey(User)
+# 	created_at = models.DateTimeField(auto_now_add = True)
+# 	updated_at = models.DateTimeField(auto_now = True)
+# 	objects = ReviewManager()
